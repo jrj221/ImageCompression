@@ -1,8 +1,7 @@
 import sys
-
+import decompression
 from PIL import Image
-#IDEA: invert the map in each direction. Easier to map pixels to characters when first compressing
-# but when you are interpreting the compressed txt file, it would be easier to map characters to pixels.
+
 
 def get_compression_string(image, pixel_dict):
     compressed_string = ''
@@ -13,30 +12,34 @@ def get_compression_string(image, pixel_dict):
         keys.append(str(i))
 
     k = 0
-    for i in range(image.width):
-        for j in range(image.height):  #iterate over image
+    for i in range(image.height):
+        for j in range(image.width):  #iterate over image
             print(i,j)
-            pixel = image.getpixel((i, j))
+            pixel = image.getpixel((j, i))
+            rounding_multiple = 30
             #pixel_dict takes form (r,g,b,a) = '1'
-
-
-            if not pixel in pixel_dict:  # pixel doesn't exist in dict
-                pixel_dict[pixel] = keys[k]
+            rounded_pixel_red = rounding_multiple * round(pixel[0] / rounding_multiple)
+            rounded_pixel_green = rounding_multiple * round(pixel[1] / rounding_multiple)
+            rounded_pixel_blue = rounding_multiple * round(pixel[2] / rounding_multiple)
+            rounded_pixel_alpha = rounding_multiple * round(pixel[3] / rounding_multiple)
+            rounded_pixel = (rounded_pixel_red, rounded_pixel_green, rounded_pixel_blue, rounded_pixel_alpha)
+            if not rounded_pixel in pixel_dict:  # pixel doesn't exist in dict
+                pixel_dict[rounded_pixel] = keys[k]
                 compressed_string += keys[k] + ','
                 k += 1
             else:  # pixel DOES exist in map
-                compressed_string += pixel_dict[pixel] + ','
+                compressed_string += pixel_dict[rounded_pixel] + ','
 
     return compressed_string
 
-def main():
+def compress():
     image = Image.open("world_map.png")
 
     pixel_dict = {}
     # create map of chars to pixels and write chars to a string
     compressed_string = get_compression_string(image, pixel_dict)
 
-    print(pixel_dict)
+    #print(pixel_dict)
     #print("Compressed String: " + compressed_string)
     print("Length of Compressed String: " + str(len(compressed_string)))
 
@@ -44,8 +47,12 @@ def main():
     f = open("compressed.txt", "w")
     f.write(compressed_string)
     f.close()
-    print("Size of compressed.txt: " + str(sys.getsizeof("compressed.txt")))
+    f2 = open("pixel_dict.txt", "w")
+    f2.write(str(pixel_dict))
+    f2.close()
+    print("Length of Dictionary: " + str(len(pixel_dict)))
 
 
 if __name__ == "__main__":
-    main()
+    compress()
+    decompression.decompress()
