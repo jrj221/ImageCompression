@@ -10,10 +10,51 @@ the PNG compression is much more optimized.
 
 ## Results
 
-<p>
-  <img alt="world_map" src="world_map.png" width="2560"/>
-  <img alt="world_map_compressed" src="world_map_compressed.png" width="2560" title="map" />
-</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="world_map.png" alt="World Map" style="width: 90%; max-width: 100%;" />
+    <figcaption>World Map - 6.97MB</figcaption>
+  </figure>
+
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="world_map_compressed.png" alt="Compressed Map" style="width: 90%; max-width: 100%;" />
+    <figcaption>Compressed Map - 3.13MB</figcaption>
+  </figure>
+</div>
+This is a 55.1% compression.
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="car.png" alt="Car" style="width: 90%; max-width: 100%;" />
+    <figcaption>Car - 10.9MB</figcaption>
+  </figure>
+
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="car_compressed.png" alt="Compressed Car" style="width: 90%; max-width: 100%;" />
+    <figcaption>Compressed Car - 1.75MB</figcaption>
+  </figure>
+</div>
+This is an 83.9% compression.
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="pizza.png" alt="Pizza" style="width: 90%; max-width: 100%;" />
+    <figcaption>Pizza - 58.2MB</figcaption>
+  </figure>
+
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="pizza_compressed.png" alt="Compressed Pizza" style="width: 90%; max-width: 100%;" />
+    <figcaption>Compressed Pizza - 11.3MB</figcaption>
+  </figure>
+</div>
+This is an 80.6% compression
+
+---
+
+As you can see, some vibrancy and saturation is lost, and images with especially bright colors
+might appear washed out. Gradients will lose their smoothness too.
+
+
 
 
 
