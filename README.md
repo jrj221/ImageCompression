@@ -13,47 +13,68 @@ the PNG compression is much more optimized.
 <table>
   <tr>
     <td>
+      <img src="hallway.png" alt="Hallway" style="display: block; margin: 0 auto; width: 400px;" />
+      <br><em>World Map - 534kBB</em>
+    </td>
+    <td>
+      <img src="hallway_compressed.png" alt="Compressed Hallway" style="display: block; margin: 0 auto; width: 400px;" />
+      <br><em>Compressed Map - 203kB</em>
+    </td>
+  </tr>
+</table>
+This is an 62.0% compression
+
+<table>
+  <tr>
+    <td>
       <img src="world_map.png" alt="World Map" style="display: block; margin: 0 auto; width: 400px;" />
-      <br><em>World Map - 6.97MB</em>
+      <br><em>World Map - 6.9MB</em>
     </td>
     <td>
       <img src="world_map_compressed.png" alt="Compressed Map" style="display: block; margin: 0 auto; width: 400px;" />
-      <br><em>Compressed Map - 3.13MB</em>
+      <br><em>Compressed Map - 3.1MB</em>
     </td>
   </tr>
 </table>
 This is a 55.1% compression.
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="car.png" alt="Car" style="width: 90%" />
-    <figcaption>Car - 10.9MB</figcaption>
-  </figure>
 
-  <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="car_compressed.png" alt="Compressed Car" style="width: 40%" />
-    <figcaption>Compressed Car - 1.75MB</figcaption>
-  </figure>
-</div>
+<table>
+  <tr>
+    <td>
+      <img src="car.png" alt="Car" style="display: block; margin: 0 auto; width: 400px;" />
+      <br><em>World Map - 10.9MB</em>
+    </td>
+    <td>
+      <img src="car_compressed.png" alt="Compressed Car" style="display: block; margin: 0 auto; width: 400px;" />
+      <br><em>Compressed Map - 1.7MB</em>
+    </td>
+  </tr>
+</table>
+
 This is an 83.9% compression.
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="pizza.png" alt="Pizza" style="width: 90%; max-width: 100%;" />
-    <figcaption>Pizza - 58.2MB</figcaption>
-  </figure>
-
-  <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="pizza_compressed.png" alt="Compressed Pizza" style="width: 90%; max-width: 100%;" />
-    <figcaption>Compressed Pizza - 11.3MB</figcaption>
-  </figure>
-</div>
+<table>
+  <tr>
+    <td>
+      <img src="pizza.png" alt="Pizza" style="display: block; margin: 0 auto; width: 400px;" />
+      <br><em>World Map - 58.2MB</em>
+    </td>
+    <td>
+      <img src="pizza_compressed.png" alt="Compressed Pizza" style="display: block; margin: 0 auto; width: 400px;" />
+      <br><em>Compressed Map - 11.3MB</em>
+    </td>
+  </tr>
+</table>
 This is an 80.6% compression
 
 ---
 
 As you can see, some vibrancy and saturation is lost, and images with especially bright colors
-might appear washed out. Gradients will lose their smoothness too.
+might appear washed out. In some cases, gradients will lose their smoothness, but in others, 
+such as Hallway.png, they will look just fine. 
+Users can specify the rounding multiple to further compress images (default is 10) and decide what amount of
+fidelity they want to retain.
 
 
 

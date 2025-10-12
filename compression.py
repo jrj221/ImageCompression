@@ -5,25 +5,21 @@ from PIL import Image
 def round_pixel(pixel, mode, image):
     rounding_multiple = 10
     rounded_pixel = None
-    match mode:
-        case "RGBA":
-            red = rounding_multiple * round(pixel[0] / rounding_multiple)
-            green = rounding_multiple * round(pixel[1] / rounding_multiple)
-            blue = rounding_multiple * round(pixel[2] / rounding_multiple)
-            alpha = rounding_multiple * round(pixel[3] / rounding_multiple)
-            rounded_pixel = (red, green, blue, alpha)
-        case "RGB":
-            red = rounding_multiple * round(pixel[0] / rounding_multiple)
-            green = rounding_multiple * round(pixel[1] / rounding_multiple)
-            blue = rounding_multiple * round(pixel[2] / rounding_multiple)
-            rounded_pixel = (red, green, blue)
+    red = rounding_multiple * round(pixel[0] / rounding_multiple)
+    green = rounding_multiple * round(pixel[1] / rounding_multiple)
+    blue = rounding_multiple * round(pixel[2] / rounding_multiple)
+    if mode == "RGBA":
+        alpha = rounding_multiple * round(pixel[3] / rounding_multiple)
+        rounded_pixel = (red, green, blue, alpha)
+    elif mode == "RGB":
+        rounded_pixel = (red, green, blue)
 
     return rounded_pixel
 
 
 def compress():
     # SET UP VARIABLES
-    filename = "car.png"
+    filename = "hallway.png"
     name = filename.split('.')[0]
     ext = filename.split('.')[1]
     old_image = Image.open(filename)
