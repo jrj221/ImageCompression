@@ -13,11 +13,11 @@ the PNG compression is much more optimized.
 <table>
   <tr>
     <td>
-      <img src="world_map.png" alt="World Map" style="display: block; margin: 0 auto; width: 200px;" />
+      <img src="world_map.png" alt="World Map" style="display: block; margin: 0 auto; width: 400px;" />
       <br><em>World Map - 6.97MB</em>
     </td>
     <td>
-      <img src="world_map_compressed.png" alt="Compressed Map" style="display: block; margin: 0 auto; width: 200px;" />
+      <img src="world_map_compressed.png" alt="Compressed Map" style="display: block; margin: 0 auto; width: 400px;" />
       <br><em>Compressed Map - 3.13MB</em>
     </td>
   </tr>
