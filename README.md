@@ -10,27 +10,28 @@ the PNG compression is much more optimized.
 
 ## Results
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="world_map.png" alt="World Map" style="width: 90%; max-width: 100%;" />
-    <figcaption>World Map - 6.97MB</figcaption>
-  </figure>
-
-  <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="world_map_compressed.png" alt="Compressed Map" style="width: 90%; max-width: 100%;" />
-    <figcaption>Compressed Map - 3.13MB</figcaption>
-  </figure>
-</div>
+<table>
+  <tr>
+    <td>
+      <img src="world_map.png" alt="World Map" style="display: block; margin: 0 auto; max-width: 200px;" />
+      <br><em>World Map - 6.97MB</em>
+    </td>
+    <td>
+      <img src="world_map_compressed.png" alt="Compressed Map" style="display: block; margin: 0 auto; max-width: 200px;" />
+      <br><em>Compressed Map - 3.13MB</em>
+    </td>
+  </tr>
+</table>
 This is a 55.1% compression.
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="car.png" alt="Car" style="width: 90%; max-width: 100%;" />
+    <img src="car.png" alt="Car" style="width: 90%" />
     <figcaption>Car - 10.9MB</figcaption>
   </figure>
 
   <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="car_compressed.png" alt="Compressed Car" style="width: 90%; max-width: 100%;" />
+    <img src="car_compressed.png" alt="Compressed Car" style="width: 40%" />
     <figcaption>Compressed Car - 1.75MB</figcaption>
   </figure>
 </div>
